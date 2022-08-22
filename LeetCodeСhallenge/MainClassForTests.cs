@@ -154,4 +154,32 @@ public class MainClassForTests
         
         Assert.IsFalse(result);
     }
+    
+    [Test]
+    public void SpiralMatrix9Count()
+    {
+        int[][] matrix = { 
+            new[] { 1,2,3 }, 
+            new[] { 4,5,6 }, 
+            new[] { 7,8,9 } 
+        };
+        
+        var result = SpiralMatrixTask.SpiralOrder(matrix);
+        
+        Assert.AreEqual( new List<int>() {1,2,3,6,9,8,7,4,5}, result);
+    }
+    
+    [Test]
+    public void SpiralMatrix12Count()
+    {
+        int[][] matrix = { 
+            new[] { 1,2,3,4 }, 
+            new[] { 5,6,7,8 }, 
+            new[] { 9,10,11,12 } 
+        };
+        
+        var result = SpiralMatrixTask.SpiralOrder(matrix);
+        
+        Assert.AreEqual( new List<int>() {1,2,3,4,8,12,11,10,9,5,6,7}, result);
+    }
 }
