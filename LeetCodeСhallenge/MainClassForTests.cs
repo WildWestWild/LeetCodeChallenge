@@ -136,4 +136,22 @@ public class MainClassForTests
         
         Assert.AreEqual(8650, result);
     }
+    
+    [Test]
+    public void HappyNumber19()
+    {
+        int n = 19;
+        var result = HappyNumberTask.IsHappy(n);
+        
+        Assert.IsTrue(result);
+    }
+    
+    [Test]
+    public void HappyNumber2()
+    {
+        int n = 2;
+        var result = HappyNumberTask.IsHappy(n);
+        
+        Assert.IsFalse(result);
+    }
 }
