@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using LeetCodeСhallenge.LeetCode;
+using LeetCodeСhallenge.ObjectsForTasks;
 using NUnit.Framework;
 
 namespace LeetCodeСhallenge;
@@ -180,6 +181,69 @@ public class MainClassForTests
         
         var result = SpiralMatrixTask.SpiralOrder(matrix);
         
-        Assert.AreEqual( new List<int>() {1,2,3,4,8,12,11,10,9,5,6,7}, result);
+        Assert.AreEqual( new List<int> {1,2,3,4,8,12,11,10,9,5,6,7}, result);
+    }
+
+    [Test]
+    public void LengthOfLongestSubstring3()
+    {
+        string s = "abcabcbb";
+        int result = LengthOfLongestSubstringTask.LengthOfLongestSubstring(s);
+        Assert.AreEqual(3, result);
+    }
+    
+    [Test]
+    public void LengthOfLongestSubstring1()
+    {
+        string s = "bbbbb";
+        int result = LengthOfLongestSubstringTask.LengthOfLongestSubstring(s);
+        Assert.AreEqual(1, result);
+    }
+    
+    [Test]
+    public void LengthOfLongestSubstring3Long()
+    {
+        string s = "pwwkew";
+        int result = LengthOfLongestSubstringTask.LengthOfLongestSubstring(s);
+        Assert.AreEqual(3, result);
+    }
+    
+    [Test]
+    public void LengthOfLongestSubstring1Space()
+    {
+        string s = "   ";
+        int result = LengthOfLongestSubstringTask.LengthOfLongestSubstring(s);
+        Assert.AreEqual(1, result);
+    }
+
+    [Test]
+    public void MergeTwoSortedListTest()
+    {
+        ListNode headList1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode headList2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+        ListNode resultHead = MergeTwoSortedListsTask.MergeTwoLists(headList1, headList2);
+        ListNode.HeadListNodeInArray(resultHead);
+    }
+    
+    [Test]
+    public void MergeTwoSortedListTestBothNull()
+    {
+        ListNode resultHead = MergeTwoSortedListsTask.MergeTwoLists(null, null);
+        ListNode.HeadListNodeInArray(resultHead);
+    }
+    
+    [Test]
+    public void MergeTwoSortedListTestFirstNull()
+    {
+        ListNode resultHead = MergeTwoSortedListsTask.MergeTwoLists(null, new ListNode());
+        ListNode.HeadListNodeInArray(resultHead);
+    }
+    
+    [Test]
+    public void MergeTwoSortedListTestFirstOneSecondTwo()
+    {
+        ListNode resultHead = MergeTwoSortedListsTask.MergeTwoLists(new ListNode(1), new ListNode(2));
+        ListNode.HeadListNodeInArray(resultHead);
     }
 }
