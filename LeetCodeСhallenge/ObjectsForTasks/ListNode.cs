@@ -11,7 +11,7 @@ public class ListNode
         this.next = next;
     }
 
-    public static List<int> HeadListNodeInArray(ListNode head)
+    public static List<int> HeadListNodeInArray(ListNode? head)
     {
         List<int> listInts = new List<int>();
         while (head is not null)
